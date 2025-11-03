@@ -437,6 +437,10 @@ main {
     width: 100vw;
 }
 
+#theme {
+    margin: 3rem auto;
+}
+
 .theme-content {
     line-height: 2.2;
     opacity: 0;
