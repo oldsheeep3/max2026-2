@@ -679,6 +679,14 @@ main {
     color: #000;
 }
 
+.btn > a {
+    border-radius: 0.5em;
+    background-color: var(--main-text-color);
+    color: #000;
+    display: inline-block;
+    padding: 0.5em 2.5em;
+}
+
 @media (max-width: 480px) {
     .top-mask1 {
         mask-image:
