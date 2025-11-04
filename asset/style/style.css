@@ -2,6 +2,7 @@
 
 :root {
     --main-bg-color: rgba(243, 57, 0, 1);
+    --main-bg-color-transparent: rgba(243, 57, 0, 0.8);
     --main-text-color: #fff;
     --highlight-color: #dd2600;
 }
@@ -79,14 +80,24 @@ header {
     z-index: 9999;
 }
 
+#header-mobile {
+    display: none;
+}
+
 .header-left,
 .header-right {
     display: flex;
     align-items: baseline;
     gap: 2rem;
     pointer-events: auto;
+    width: 100%;
 }
-
+.header-left {
+    justify-content: flex-end;
+}
+.header-right {
+    justify-content: flex-start;
+}
 .header-center {
     pointer-events: auto;
 }
@@ -301,7 +312,8 @@ main {
     width: 100%;
     height: 0;
     margin-bottom: 4rem;
-    z-index: 80;
+    z-index: 110;
+    overflow: visible;
 }
 .section-0 {
     height: 15vw;
@@ -387,22 +399,25 @@ main {
 }
 
 .bg {
-    position: relative;
-    /* overflow-x: hidden; */
+    font-size: 15rem;
+    position: absolute;
     overflow-y: visible;
     width: 100%;
     height: 0;
-    z-index: 50;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
 }
 
 .background-text {
     position: absolute;
-    font-size: 15rem;
+    font-size: 1em;
     font-weight: 700;
     color: var(--highlight-color);
     pointer-events: none;
     white-space: nowrap;
     will-change: transform;
+    text-anchor: middle;
 }
 
 .background-text-left {
@@ -425,16 +440,19 @@ main {
     }
 }
 
-.background-text-top {
+.bg > * {
     position: absolute;
-    top: -180px;
-    width: 100vw;
+    width: 100%;
+    height: 1.15em;
+    text-anchor: middle;
+    align-items: center;
+}
+.background-text-top {
+    bottom: 0.1em;
 }
 
 .background-text-down {
-    position: absolute;
-    top: 200px;
-    width: 100vw;
+    top: 0.1em;
 }
 
 #theme {
@@ -697,29 +715,69 @@ main {
         font-size: 14px;
     }
     header {
+        position: fixed;
+        overflow: hidden;
         width: 100%;
         height: 100dvh;
-        position: fixed;
-        background-color: var(--main-bg-color);        overflow: hidden;
-        overflow: hidden;
-        pointer-events: none;
-        display: flex;
         flex-direction: column;
-        /* display: contents; */
+        justify-content: start;
+        display: flex;
+        background-color: #0000;
+        transition: background-color 0.3s ease;
+        pointer-events: none;
+        padding-top: 8rem;
+    }
+    header > *:not(#header-mobile) {
         display: none;
     }
-    header > div:not(.header-center) {
+    header:has(.header-mobile-open) > div:not(.header-center):not(#header-mobile) {
         display: contents;
-        /* display: none; */
+        justify-items: center;
+    }
+    header:has(.header-mobile-open) {
+        background-color: var(--main-bg-color-transparent);
+    }
+    header .nav-item {
+        pointer-events: auto;
     }
     .header-center {
+        display: block;
         position: fixed;
-        top: 0;
-        position: absolute;
         top: 0;
         pointer-events: auto;
     }
+    #header-mobile {
+        z-index: 9999;
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+        position: absolute;
+        pointer-events: auto;
+    }
+    #header-mobile > * {
+        width: 2.25rem;
+        height: 0.2rem;
+        background-color: var(--main-text-color);
+    }
+    #header-mobile > * {
+        transition: transform 0.3s ease;
+    }
+    .header-mobile-open > *:first-child {
+        transform: translateY(0.5rem) rotate(-45deg);
+    }
+    .header-mobile-open > *:nth-child(2) {
+        transform: rotateX(90deg);
+    }
+    .header-mobile-open > *:last-child {
+        transform: translateY(-0.5rem) rotate(45deg);
+    }
 
+    .bg {
+        font-size: 15rem;
+    }
     .information {
         flex-direction: column;
         max-width: 90vw;
@@ -768,10 +826,14 @@ main {
     .section-1 > * {
         background-image: url('/asset/image/section-liner/section-1-mobile.svg');
     }
+    .section-2 {
+        margin-bottom: -1rem;
+    }
     .section-2 > * {
         background-image: url('/asset/image/section-liner/section-2-mobile.svg');
-        padding-top: 300px;
-        margin-bottom: -11rem;
+        padding-top: 280px;
+        margin-bottom: -6rem;
+        
     }
     .section-3 > * {
         background-image: url('/asset/image/section-liner/section-3-mobile.svg');

@@ -7,6 +7,16 @@ window.addEventListener('DOMContentLoaded', () => {
     initScrollReveal();
     window.addEventListener('scroll', updateAutoAnimation);
     lanterns = new lantern();
+    const humburger = document.getElementById('header-mobile');
+    if (humburger) {
+        humburger.addEventListener('click', handleHumburgerClick);
+    }
+    const navItems = document.querySelectorAll('header a.nav-item');
+    navItems.forEach((item) => {
+        item.addEventListener('click', () => {
+            handleHumburgerClick();
+        });
+    });
 });
 
 window.addEventListener('scroll', () => {
@@ -85,6 +95,13 @@ function initScrollReveal() {
     });
     
     observer.observe(themeContent);
+}
+
+function handleHumburgerClick() {
+    const headerMobile = document.getElementById('header-mobile');
+    if (headerMobile) {
+        headerMobile.classList.toggle('header-mobile-open');
+    }
 }
 
 class lantern {
