@@ -45,7 +45,7 @@ section {
 section > * {
     position: relative;
     margin: 0 auto;
-    max-width: 600px;
+    max-width: min(600px, 90vw);
 }
 
 .inline-img {
@@ -263,7 +263,7 @@ main {
     position: absolute;
     top: 0;
     left: 0;
-    font-size: 75px;
+    font-size: 3.75rem;
     font-weight: 700;
     color: #FFF3F2;
     z-index: 21;
@@ -273,7 +273,7 @@ main {
     position: absolute;
     bottom: 0;
     right: 0;
-    font-size: 75px;
+    font-size: 3.75rem;
     font-weight: 900;
     color: #FFF3F2;
     z-index: 21;
@@ -476,7 +476,7 @@ main {
 }
 
 #access {
-    margin-bottom: 6rem;
+    margin-bottom: 1rem;
 }
 
 .information {
@@ -490,12 +490,12 @@ main {
 }
 
 .information p {
-    font-size: 1em;
+    font-size: 1rem;
     font-weight: 300;
 }
 
 .information h3 {
-    font-size: 1.1em;
+    font-size: 1.1rem;
     font-weight: 700;
 }
 
@@ -511,8 +511,9 @@ main {
 }
 
 .left-title, .left {
+    font-size: 1rem;
     text-align: left;
-    margin-bottom: 2em;
+    margin-bottom: 2rem;
 }
 .left-title > p {
     font-size: 1em;
@@ -692,6 +693,59 @@ main {
 }
 
 @media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+    header {
+        width: 100%;
+        height: 100dvh;
+        position: fixed;
+        background-color: var(--main-bg-color);        overflow: hidden;
+        overflow: hidden;
+        pointer-events: none;
+        display: flex;
+        flex-direction: column;
+        /* display: contents; */
+        display: none;
+    }
+    header > div:not(.header-center) {
+        display: contents;
+        /* display: none; */
+    }
+    .header-center {
+        position: fixed;
+        top: 0;
+        position: absolute;
+        top: 0;
+        pointer-events: auto;
+    }
+
+    .information {
+        flex-direction: column;
+        max-width: 90vw;
+        gap: 1rem;
+    }
+
+    .information > div > *:last-child {
+        margin-bottom: 0;
+    }
+
+    .left-title {
+        text-align: center;
+    }
+
+    #top1,
+    #top2 {
+        width: 50%;
+    }
+    #top2 {
+        left: 50%;
+    }
+
+    .max-container {
+        width: 90vw;
+        height: 20rem;
+    }
     .top-mask1 {
         mask-image:
             url('/asset/image/masks/t-m-i.svg'),
@@ -727,6 +781,12 @@ main {
     }
     .mobile {
         display: block;
+    }
+    footer {
+        flex-direction: column;
+    }
+    .footer-divider {
+        display: none;
     }
 }
 
