@@ -131,11 +131,11 @@ class lantern {
         const z = () => {
             switch (true) {
                 case speed > 1:
-                    return 1;
+                    return 91;
                 case speed < 1:
-                    return -1;
+                    return 89;
                 default:
-                    return 0;
+                    return 90;
             }
         };
         const lanternElem = document.createElement('img');
@@ -165,12 +165,13 @@ class lantern {
     }
 
     initLanterns() {
+        const mainElem = document.querySelector('main');
         const lanternElem = document.createElement('div');
         lanternElem.id = 'lantern-container';
-        lanternElem.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:90;overflow:hidden;';
+        lanternElem.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;overflow:hidden;';
         lanternElem.ariaHidden = true;
         this.lanternElem = lanternElem;
-        document.body.appendChild(lanternElem);
+        mainElem.appendChild(lanternElem);
         this.makeLantern(5, 'r', 'top', 8, 240, 3, 1.3, -8);
         this.makeLantern(23, 'l', 'top', 18, 60, 0, 0.7, 12);
         this.makeLantern(5, 'l', 'top', 40, 120, 1, 1, 15, 'pc');

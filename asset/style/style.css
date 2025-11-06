@@ -40,13 +40,13 @@ section {
     color: #FFF2F2;
     text-align: justify;
     scroll-margin-top: 100px;
-    z-index: 100;
 }
 
 section > * {
     position: relative;
     margin: 0 auto;
     max-width: min(600px, 90vw);
+    z-index: 100;
 }
 
 .inline-img {
@@ -132,12 +132,14 @@ main {
     position: relative;
     height: 100vh;
     overflow: hidden;
+}
+
+.top-mask {
     filter: drop-shadow(1px 0 0 #000000)
           drop-shadow(-1px 0 0 #000000)
           drop-shadow(0 1px 0 #000000)
           drop-shadow(0 -1px 0 #000000);
 }
-
 .top-mask1,
 .top-mask2 {
     content: "";
@@ -259,7 +261,7 @@ main {
     transform: translate(-50%, -50%);
     width: 80vw;
     height: 60vh;
-    z-index: 20;
+    z-index: 150;
     pointer-events: none;
 }
 
@@ -312,7 +314,7 @@ main {
     width: 100%;
     height: 0;
     margin-bottom: 4rem;
-    z-index: 110;
+    z-index: 80;
     overflow: visible;
 }
 .section-0 {
@@ -406,7 +408,7 @@ main {
     height: 0;
     top: 50%;
     transform: translateY(-50%);
-    z-index: -1;
+    z-index: 50;
 }
 
 .background-text {
@@ -659,6 +661,7 @@ main {
     font-size: 4rem;
     text-align: center;
     color: var(--highlight-color);
+    z-index: 50;
 }
 .sponsor-logos {
     display: flex;
@@ -803,6 +806,7 @@ main {
     .max-container {
         width: 90vw;
         height: 20rem;
+        z-index: 120;
     }
     .top-mask1 {
         mask-image:
