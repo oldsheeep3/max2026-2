@@ -299,7 +299,7 @@ main {
     z-index: 1;
     position: absolute;
     width: 100%;
-    height: 50vw;
+    height: 100%;
     bottom: 0;
     background-repeat: no-repeat;
     background-position: bottom center;
@@ -318,16 +318,20 @@ main {
     overflow: visible;
 }
 .section-0 {
-    height: 15vw;
+    height: 38vw;
+    margin-top: -22.5vw;
 }
 .section-1 {
-    height: 13rem;
+    height: 37vw;
+    margin-top: -18vw;
 }
 .section-2 {
-    height: 13rem;
+    height: 19vw;
+    margin-bottom: -2vw;
 }
 .section-3 {
-    height: 13rem;
+    height: 27vw;
+    margin-top: -7vw;
 }
 .section-0 > * {
     background-image: url('/asset/image/section-liner/section-0.svg');
@@ -337,7 +341,6 @@ main {
 }
 .section-2 > * {
     background-image: url('/asset/image/section-liner/section-2.svg');
-    margin-bottom: -7rem;
 }
 .section-3 > * {
     background-image: url('/asset/image/section-liner/section-3.svg');
@@ -713,7 +716,7 @@ main {
     padding: 0.5em 2.5em;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 580px) {
     html {
         font-size: 14px;
     }
@@ -824,20 +827,32 @@ main {
     .top-img::after {
         background-image: url('/asset/image/top/cloud-down-mobile.svg');
     }
+    .section-0 {
+        height: 51vw;
+    }
+    .section-1 {
+        height: 51vw;
+        margin-top: -10vw;
+    }
+    .section-2 {
+        height: 71vw;
+        margin: -15vw 0;
+        /* margin-bottom: -10vw; */
+    }
+    .section-3 {
+        height: 83vw;
+        margin-top: -40vw;
+    }
     .section-0 > * {
         background-image: url('/asset/image/section-liner/section-0-mobile.svg');
     }
     .section-1 > * {
         background-image: url('/asset/image/section-liner/section-1-mobile.svg');
     }
-    .section-2 {
-        margin-bottom: -1rem;
-    }
     .section-2 > * {
         background-image: url('/asset/image/section-liner/section-2-mobile.svg');
-        padding-top: 280px;
+        padding-top: 90vw;
         margin-bottom: -6rem;
-        
     }
     .section-3 > * {
         background-image: url('/asset/image/section-liner/section-3-mobile.svg');
@@ -846,8 +861,15 @@ main {
         display: none;
     }
     .mobile {
-        display: block;
+        display: unset;
     }
+    .theme-line1 {
+        margin-left: 0;
+    }
+    .theme-line2 {
+        margin-right: 0;
+    }
+
     footer {
         flex-direction: column;
     }

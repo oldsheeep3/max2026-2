@@ -172,10 +172,10 @@ class lantern {
         lanternElem.ariaHidden = true;
         this.lanternElem = lanternElem;
         mainElem.appendChild(lanternElem);
-        this.makeLantern(5, 'r', 'top', 8, 240, 3, 1.3, -8);
+        this.makeLantern(5, 'r', 'top', 8, 240, 3, 1.3, -8, 'pc');
         this.makeLantern(23, 'l', 'top', 18, 60, 0, 0.7, 12);
         this.makeLantern(5, 'l', 'top', 40, 120, 1, 1, 15, 'pc');
-        this.makeLantern(25, 'r', 'top', 65, 140, 1, 1, -6, 'pc');
+        this.makeLantern(25, 'r', 'top', 65, 140, 1, 1, -6);
 
         this.makeLantern(0, 'l', 'about', 0, 250, 3, 1.3, -8, 'pc');
         this.makeLantern(5, 'r', 'about', -30, 160, 1, 1, 15, 'pc');
