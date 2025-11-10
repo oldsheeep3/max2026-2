@@ -708,6 +708,9 @@ main {
     color: #000;
 }
 
+.btn {
+    margin: 0 0 2rem;
+}
 .btn > a {
     border-radius: 0.5em;
     background-color: var(--main-text-color);
